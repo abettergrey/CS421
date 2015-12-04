@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- xml used to map parent class person attributes used in the person table-->
+<hibernate-mapping>
+     <class name="dpp.patient.maintenance.Person" table="person">
+        <id column="id" name="id" type="int">
+            <generator class="increment"/>
+        </id>
+              
+        <property name="firstName" column="first_name" />
+        <property name="middle" column="middle" />
+        <property name="lastName" column="last_name" />
+        <property name="email" column="email" />
+        <property name="address" column="address" />
+        <property name="apt" column="apt" />
+        <property name="city" column="city" />
+        <property name="state" column="state" />
+        <property name="zip" column="zip" />
+        <property name="birthDate" column="birth_date" type="string"/>
+        <property name="phone" column="phone" />
+        <property name="mobile" column="mobile" />
+       
+        <!-- sybclass mapping -->
+        <joined-subclass name="dpp.patient.maintenance.Patient" table="patient"> 
+            <!-- foreign key -->
+            <key column="patient_id" />
+            <property name="createdDate" column="created_date" type="string" not-null="true"/>          
+        </joined-subclass>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    
+    <h:head>
+        <title>DPP</title>
+    </h:head>
+    <h:body>
+        DPP Staff
+        <p><h:link outcome="/index" value="home"/>
+           <h:link outcome="index" value="Staff Home"/>
+           <h:link outcome="addPatient" value="Add Patient"/>
+        </p>
+        <h:form>
+            <h:commandLink action="#{logBean.doLogout()}" value="logout" />         
+        </h:form>
+        <h:form>
+            <h3>Create Patient</h3>
+               
+                <h:outputLabel value="First Name " />
+                <h:inputText id="firstName" value="#{maintains.patient.firstName}" required="true" requiredMessage=" *"/>
+                <h:message errorStyle="color:red" for="firstName" /><br></br>
+                
+                <h:outputLabel value="Middle" />
+                <h:inputText id="middle" value="#{maintains.patient.middle}"  maxlength="1" required="true" requiredMessage=" *"/>
+                <h:message errorStyle="color:red" for="middle" /><br></br>
+                
+                <h:outputLabel value="Last Name" />
+                <h:inputText id="lastName" value="#{maintains.patient.lastName}" required="true" requiredMessage=" *"/>
+                <h:message errorStyle="color:red" for="lastName" /><br></br>
+                
+                <hr></hr>   
+
+                <h:outputLabel value="Email Address " />
+                <h:inputText id="email" value="#{maintains.patient.email}" required="true" requiredMessage=" *"/>   
+                <h:message errorStyle="color:red" for="email" /><br></br>
+                
+                <h:outputLabel value="Confirm Email Address" />
+                <h:inputText id="tmpEmail" value="#{maintains.tmpEmail}" required="true" requiredMessage=" *"/>
+                <h:message errorStyle="color:red" for="tmpEmail" /><br></br>
+
+                <hr></hr>  
+
+                <h:outputLabel value="Permanent Address" /> 
+                <h:inputText id="address" value="#{maintains.patient.address}" required="true" requiredMessage=" *"/>    
+                <h:message errorStyle="color:red" for="address" /><br></br>
+                
+                <h:outputLabel value="City" />   
+                <h:inputText id="city" value="#{maintains.patient.city}" required="true" requiredMessage=" *"/>     
+                <h:message errorStyle="color:red" for="city" /><br></br>
+                
+                <h:outputLabel value="State" />    
+                <h:inputText id="state" value="#{maintains.patient.state}" maxlength="2" required="true" requiredMessage=" *"/>   
+                <h:message errorStyle="color:red" for="state" /><br></br>
+                
+                <h:outputLabel value="Zip" />    
+                <h:inputText id="zip" value="#{maintains.patient.zip}" required="true" requiredMessage=" *"/>     
+                <h:message errorStyle="color:red" for="zip" /><br></br>
+
+                <h:outputLabel value="Date of Birth (mm-dd-yyyy)" /><br></br>
+                <h:inputText id="birthDate" value="#{maintains.patient.birthDate}"  maxlength="10" required="true" requiredMessage=" *"/>  
+                <h:message errorStyle="color:red" for="birthDate" /><br></br> 
+
+                <h:outputLabel value="Home Phone Number (xxx)-xxx-xxxx" /><br></br>
+                <h:inputText id="phone" value="#{maintains.patient.phone}"  maxlength="10" required="true" requiredMessage=" *"/>
+                <h:message errorStyle="color:red" for="phone" /><br></br>
+                
+                <h:outputLabel value="Mobile Phone Number (xxx)-xxx-xxxx" /><br></br>
+                <h:inputText id="mobile" value="#{maintains.patient.mobile}"  maxlength="10"/><br></br>  
+            
+                <h:commandButton value="submit" action="#{maintains.create()}" ></h:commandButton>
+                <h:commandButton value="Clear All"></h:commandButton>
+                
+                <h:commandLink action="#{navigationBean.redirectToAccountCreated()}" value="Info page"/>
+        </h:form>
+        
+        
+        
+    </h:body>
+</html>

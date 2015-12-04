@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    
+    <h:head>
+        <title>DPP</title>
+    </h:head>
+    <h:body>
+        Account Created
+        <p><h:link outcome="/index" value="home"/>
+           <h:link outcome="index" value="Staff Home"/>
+           <h:link outcome="addPatient" value="Add Patient"/>
+        </p>
+        <h:form>
+            <h:commandLink action="#{logBean.doLogout()}" value="logout" />         
+        </h:form>
+        <h:form>
+            <h:messages errorStyle="color:red"/>
+            <br/>
+            Account Created for
+            <h:outputLabel value="username: " style="font-weight:bold"/>
+            <h:outputText value="#{maintains.tmpusername}" />
+            <br/>
+            <h:outputLabel value="tmp password: " style="font-weight:bold"/>
+            <h:outputText  id="password" value="#{maintains.tmpPassword}"/>
+            </h:form>
+    </h:body>
+</html>
+    
