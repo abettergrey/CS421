@@ -3,7 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/dggodi/work%20projects/dave/school/CS/cs401/pa2/DPP/web/index.xhtml</file>
+            <file>file:/C:/Users/dggodi/Documents/GitHub/DPPSystem/CS421/DPPSystem/DPP/web/staff/index.xhtml</file>
+            <file>file:/C:/Users/dggodi/Documents/GitHub/DPPSystem/CS421/DPPSystem/DPP/web/staff/accountOK.xhtml</file>
+            <file>file:/C:/Users/dggodi/Documents/GitHub/DPPSystem/CS421/DPPSystem/DPP/src/java/dpp/controllers/LoginController.java</file>
+            <file>file:/C:/Users/dggodi/Documents/GitHub/DPPSystem/CS421/DPPSystem/DPP/web/login.xhtml</file>
+            <file>file:/C:/Users/dggodi/Documents/GitHub/DPPSystem/CS421/DPPSystem/DPP/src/java/dpp/controllers/CreatePatientAccountController.java</file>
+            <file>file:/C:/Users/dggodi/Documents/GitHub/DPPSystem/CS421/DPPSystem/DPP/web/user/index.xhtml</file>
         </group>
     </open-files>
 </project-private>

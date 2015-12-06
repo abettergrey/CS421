@@ -1,4 +1,4 @@
-package dpp.patient.maintenance;
+package dpp.dbClasses;
 
 /**
  * class for user roles

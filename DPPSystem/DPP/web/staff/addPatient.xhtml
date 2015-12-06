@@ -46,6 +46,10 @@
                 <h:inputText id="address" value="#{maintains.patient.address}" required="true" requiredMessage=" *"/>    
                 <h:message errorStyle="color:red" for="address" /><br></br>
                 
+                <h:outputLabel value="Apartment" /> 
+                <h:inputText id="apt" value="#{maintains.patient.apt}" />    
+                <h:message errorStyle="color:red" for="apt" /><br></br>
+                
                 <h:outputLabel value="City" />   
                 <h:inputText id="city" value="#{maintains.patient.city}" required="true" requiredMessage=" *"/>     
                 <h:message errorStyle="color:red" for="city" /><br></br>

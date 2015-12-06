@@ -1,5 +1,9 @@
-package dpp.login;
+package dpp.controllers;
 
+import dpp.login.LogAppDB;
+import dpp.login.NavigationBean;
+import dpp.login.SessionBean;
+import dpp.dbClasses.User;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -26,24 +30,28 @@ public class LoginController
     public String logIn()
     {
         LogAppDB tmp = new LogAppDB();
-        List<User> tmpuser = tmp.authenticate(this.user.getUsername(), this.user.getPassword());     
+        List<User> tmpuser = tmp.authenticate(this.user.getUsername());     
         
-        if(!tmpuser.isEmpty())
+        if(!tmpuser.isEmpty() && user.comparePassword(tmpuser.get(0).getPassword()))
         {
+            // set session
             user.setUsername(tmpuser.get(0).getUsername());
             user.setRole(tmpuser.get(0).getRole());
 
-            loggedIn = true;
-            
             HttpSession session = SessionBean.getSession();
             session.setAttribute("user", user);
             
+            loggedIn = true;
+            
+            // if user role is STAFF redirect to staff hme page
+            // else: redirect to user home page
             if (user.getRole().equals("STAFF"))           
                 return navigationBean.redirectToWelcomeStaff();          
             else
                 return navigationBean.redirectToWelcomeUser();
         }
         
+        // create error message if passworeds are nto equal
         FacesMessage msg = new FacesMessage("Login error!", "ERROR MSG");
         msg.setSeverity(FacesMessage.SEVERITY_ERROR);
         FacesContext.getCurrentInstance().addMessage(null, msg);

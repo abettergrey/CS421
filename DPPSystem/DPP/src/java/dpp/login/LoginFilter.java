@@ -5,7 +5,9 @@
  */
 package dpp.login;
 
-import dpp.patient.maintenance.RoleNode;
+import dpp.dbClasses.User;
+import dpp.controllers.LoginController;
+import dpp.dbClasses.RoleNode;
 import java.io.IOException;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -39,7 +41,7 @@ public class LoginFilter implements javax.servlet.Filter
         HttpSession session = ((HttpServletRequest)request).getSession(false);
         User currentUser = (User)session.getAttribute("user");
                
-        // if no seesion exists move to forward to login page
+        // if no session exists move to forward to login page
         // else if: if users role is USER and url has the substring staff 
         //          then terminate session and forward to login
         // else: send to servlet to run main program

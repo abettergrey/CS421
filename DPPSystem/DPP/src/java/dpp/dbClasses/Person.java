@@ -1,4 +1,7 @@
-package dpp.patient.maintenance;
+package dpp.dbClasses;
+
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
 
 /**
  * person class used to map table person
@@ -130,4 +133,24 @@ public class Person
     {
         return this;
     }
+    
+    public boolean isEmailValid()
+    {
+        boolean result = true;
+        try 
+        {
+            InternetAddress emailAddr = new InternetAddress(email);
+            emailAddr.validate();
+        } catch (AddressException ex) 
+        {
+            result = false;
+        }
+        return result;
+    }
+    
+    public boolean compareEmail(String email)
+    {
+        return email.equals(this.email);
+    }
+            
 }

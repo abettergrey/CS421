@@ -2,29 +2,27 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- xml used to map parent class person attributes used in the person table-->
 <hibernate-mapping>
-     <class name="dpp.patient.maintenance.Person" table="person">
-        <id column="id" name="id" type="int">
-            <generator class="increment"/>
-        </id>
-              
-        <property name="firstName" column="first_name" />
-        <property name="middle" column="middle" />
-        <property name="lastName" column="last_name" />
-        <property name="email" column="email" />
-        <property name="address" column="address" />
-        <property name="apt" column="apt" />
-        <property name="city" column="city" />
-        <property name="state" column="state" />
-        <property name="zip" column="zip" />
-        <property name="birthDate" column="birth_date" type="string"/>
-        <property name="phone" column="phone" />
-        <property name="mobile" column="mobile" />
-       
-        <!-- sybclass mapping -->
-        <joined-subclass name="dpp.patient.maintenance.Patient" table="patient"> 
-            <!-- foreign key -->
-            <key column="patient_id" />
-            <property name="createdDate" column="created_date" type="string" not-null="true"/>          
-        </joined-subclass>
-    </class>
+  <class name="dpp.dbClasses.Person" table="person">
+    <id column="id" name="id" type="int">
+      <generator class="increment"/>
+    </id>
+    <property column="first_name" name="firstName"/>
+    <property column="middle" name="middle"/>
+    <property column="last_name" name="lastName"/>
+    <property column="email" name="email"/>
+    <property column="address" name="address"/>
+    <property column="apt" name="apt"/>
+    <property column="city" name="city"/>
+    <property column="state" name="state"/>
+    <property column="zip" name="zip"/>
+    <property column="birth_date" name="birthDate" type="string"/>
+    <property column="phone" name="phone"/>
+    <property column="mobile" name="mobile"/>
+    <!-- sybclass mapping -->
+    <joined-subclass name="dpp.dbClasses.Patient" table="patient">
+      <!-- foreign key -->
+      <key column="patient_id"/>
+      <property column="created_date" name="createdDate" not-null="true" type="string"/>
+    </joined-subclass>
+  </class>
 </hibernate-mapping>

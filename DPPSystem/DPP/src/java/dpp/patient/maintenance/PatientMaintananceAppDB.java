@@ -5,11 +5,13 @@
  */
 package dpp.patient.maintenance;
 
+import dpp.dbClasses.Person;
+import dpp.dbClasses.Patient;
 import dpp.login.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import dpp.login.User;
+import dpp.dbClasses.User;
 /**
  * database manager class for patient info
  */

@@ -3,7 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dpp.patient.maintenance;
+package dpp.dbClasses;
+
+import dpp.patient.maintenance.MedicalRecord;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  *  patient class used to map table patient
@@ -14,6 +18,14 @@ public class Patient extends Person
     private String createdDate;
     private MedicalRecord medRecord;
 
+    public Patient()
+    {
+        Calendar calendar = Calendar.getInstance();
+        Date currentDate = calendar.getTime();
+        java.sql.Date date = new java.sql.Date(currentDate.getTime());
+        createdDate = date.toString();
+    }
+    
     public int getPatient_id() {
         return patient_id;
     }
@@ -26,8 +38,8 @@ public class Patient extends Person
         return createdDate;
     }
 
-    public void setCreatedDate(String createdDate) {
-        this.createdDate = createdDate;
+    public void setCreatedDate(String date) {
+        this.createdDate = date;
     }
     
     public MedicalRecord getMedRecord() {

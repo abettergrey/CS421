@@ -12,6 +12,7 @@
            <h:link outcome="index" value="User home"/>
            <h:link outcome="test" value="Test"/>
         </p>
+        <p>Welcome <h:outputText value="#{logBean.user.username}"/></p>
         <h:form>
             <h:commandLink action="#{logBean.doLogout()}" value="logout" />
         </h:form>

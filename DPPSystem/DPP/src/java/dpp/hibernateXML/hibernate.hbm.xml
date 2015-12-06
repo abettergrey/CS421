@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- xml used to map Use attributes used in user -->
 <hibernate-mapping>
-  <class name="dpp.login.User" table="user">
+  <class name="dpp.dbClasses.User" table="user">
     <id column="id" name="id" type="int">
       <generator class="increment"/>
     </id>
