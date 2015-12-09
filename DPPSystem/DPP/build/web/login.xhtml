@@ -7,25 +7,77 @@
     
     <h:head>
         <title>DPP</title>
+        <link href='resources/css/dpp.css' rel='stylesheet' type='text/css' />
     </h:head>
     <h:body>
-      
-        <p><h:link outcome="/index" value="home"/></p>
-        <f:view>
-            <h:form>
-                <h:messages errorStyle="color:red"/>
-                <br/>
-                <h:outputLabel  value="username: " style="font-weight:bold"/>
-                <h:inputText p:placeholder="name" id="username" value="#{logBean.user.username}"/>
-                <br/>
-                <h:outputLabel value="password: " style="font-weight:bold"/>
-                <h:inputSecret p:placeholder="password" id="password" value="#{logBean.user.password}"/>
-                <br/>
-                <h:commandButton value ="Login" action="#{logBean.logIn()}"/>
-                
-                <h:commandLink action="#{navigationBean.redirectToInfo()}" value="Info page"/>
-            </h:form>
-        </f:view>
+        <div id="wrapper">
+            <div id="header">
+                <a href="index.xhtml">
+                <img src="resources/images/dppLogo.jpg" width="200" height="50" style="margin: 20px;" /></a>
+                <h2>Doctor Patient Portal</h2>
+                <div>    
+                    <h:form>
+                        <h:inputText p:placeholder="name" styleClass="text-input" id="username" value="#{logBean.user.username}"/>
+                        <h:inputSecret p:placeholder="password" id="password" value="#{logBean.user.password}"/>
+                        <h:commandButton styleClass="submitButton" value ="Login" action="#{logBean.logIn()}"/>
+                        <h:commandLink action="#{navigationBean.redirectToInfo()}"/>
+                    </h:form>
+                </div><!-- #header -->
+            </div>
+            
+            <div id="content" style="padding-top: 80px">
+                <div id="bg_body" style="height:400px">
+                    <div id="navbar">
+                        <ul class="lnavbar">
+                            <li><a href="index.xhtml" >Home</a></li>
+                            <li><a href="index.xhtml">Services</a></li>
+                            <li><a href="index.xhtml">For Patients</a></li>
+                            <li><a href="index.xhtml">About us</a></li></ul>
+                        <ul class="rnavbar">
+                            <li><a href="index.xhtml">Sign Up</a></li>
+                        </ul>
+                    </div>
+                    <br />
+                    <div id="main" style="width:95%">
+                        <h:messages id="alertmsg" errorStyle="color:#663333;"/>
+                        
+                        <div style="float:left;">
+                            <f:view>
+                                <h:form>
+                                    
+                                <br/>
+                                <h:outputLabel  value="username: " style="font-weight:bold"/>
+                                <h:inputText p:placeholder="name" id="username" value="#{logBean.user.username}"/>
+                                <br/><br/>
+                                <h:outputLabel value="password: " style="font-weight:bold"/>
+                                <h:inputSecret p:placeholder="password" id="password" value="#{logBean.user.password}"/>
+                                <br/><br/>
+                                <div id="checkboxR">
+                                  <h:selectBooleanCheckbox />
+                                  <h:outputLabel value="Remember me" />
+                                </div>
+                                
+                                <div style="margin-top:10px">
+                                <h:commandButton styleClass="submitButton" value ="Login" action="#{logBean.logIn()}"/>
+                                <h:commandLink action="#{navigationBean.redirectToInfo()}"/>
+                                </div>
+                                </h:form>
+                            </f:view> 
+                            
+                        </div>
+                        <div style="float:right">
+                                    <img src="resources/images/couple.jpg" style="margin: 20px;" />
+                                </div>
+    
+                    </div>
+                    
+                </div>  
+            </div> 
+        </div>     
+
+        <script src="resources/scripts/login.js"></script>
+        
+  
         </h:body>
 </html>
 

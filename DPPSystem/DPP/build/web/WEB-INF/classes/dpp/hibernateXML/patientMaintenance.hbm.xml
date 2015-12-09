@@ -9,6 +9,7 @@
     <property column="first_name" name="firstName"/>
     <property column="middle" name="middle"/>
     <property column="last_name" name="lastName"/>
+    <property column="ssn" name="ssn"/>
     <property column="email" name="email"/>
     <property column="address" name="address"/>
     <property column="apt" name="apt"/>

@@ -1,20 +1,69 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
     
     <h:head>
         <title>DPP User</title>
+        <link href='../resources/css/dpp.css' rel='stylesheet' type='text/css' />
     </h:head>
     <h:body>
-        DPP User
-        <p><h:link outcome="/index" value="home"/>
-           <h:link outcome="index" value="User home"/>
-           <h:link outcome="test" value="Test"/>
-        </p>
-        <p>Welcome <h:outputText value="#{logBean.user.username}"/></p>
-        <h:form>
-            <h:commandLink action="#{logBean.doLogout()}" value="logout" />
-        </h:form>
+        <div id="wrapper">
+            <div id="header">
+                <a href="index.xhtml">
+                <img src="../resources/images/dppLogo.jpg" width="200" height="50" style="margin: 20px;" /></a>
+                <h2>Doctor Patient Portal</h2>
+                <div>    
+                    <h:form>
+                        <h:outputLabel  value="username: " style="font-weight:bold"/>
+                        <h:outputText value="awdoneyet" /> 
+                    </h:form>
+                </div><!-- #header -->
+            </div>
+            
+            <div id="content" style="padding-top: 70px;">
+                <div id="bg_body_member">
+                    <p>Patient Information</p>
+                </div>
+                <div id="bg_body_memberInfo" >
+                    <h:form>
+                    <p>Patient name:
+                    <h:inputText style="width:40%;"  value="Are W Doneyet" />
+                    &nbsp;&nbsp;Patient ID:
+                    <h:inputText style="width:40%;" value="00001" />&nbsp;
+                    </p>
+                    </h:form> 
+                </div>
+            </div>
+            
+            <div id="content">
+                <div id="bg_body" style="height:200px">  
+                    <div id="navbar">
+                        <ul class="lnavbar">
+                            <li><a href="index.xhtml" >Edit Profile</a></li>
+                            <li><a href="index.xhtml">View Medical Record</a></li>
+                            <li class="navbarMain"><a href="index.xhtml">Appointment</a>
+                                <ul><li id="navbar_app"><a href="index.xhtml">Create</a></li>
+                                    <li id="navbar_app"><a href="index.xhtml">View</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="index.xhtml">Help</a></li></ul>
+                        <ul style="float:right">
+                            <li><h:form>
+                                    <h:commandLink action="#{logBean.doLogout()}" value="logout" /> 
+                                </h:form>
+                            </li>
+                        </ul>
+                    <br />
+ 
+                    </div>    
+                </div>  
+            </div>
+            
+        </div><!-- end wrapper-->
+        
+        
     </h:body>
 </html>

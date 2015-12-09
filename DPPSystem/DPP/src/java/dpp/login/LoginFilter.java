@@ -23,6 +23,8 @@ import javax.servlet.http.HttpSession;
  */
 public class LoginFilter implements javax.servlet.Filter
 {
+ 
+    
     /**
      * forwards a a new url according to the conditions
      * @param request
@@ -47,7 +49,8 @@ public class LoginFilter implements javax.servlet.Filter
         // else: send to servlet to run main program
         if(login == null || !login.isLoggedIn())
         {
-            req.getRequestDispatcher("/faces/login.xhtml").forward(request, response);
+            NavigationBean navigationBean  = new NavigationBean();
+            req.getRequestDispatcher(navigationBean.toLogin()).forward(request, response);
         }
         else if(currentUser.getRole().equals(new RoleNode().USER) && req.getRequestURI().contains("staff"))
         {

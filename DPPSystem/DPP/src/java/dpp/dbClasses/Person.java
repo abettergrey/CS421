@@ -12,6 +12,7 @@ public class Person
     private String firstName;
     private String lastName;
     private String middle;
+    private String ssn;
     private String email;
     private String address;
     private String apt;
@@ -55,6 +56,14 @@ public class Person
     
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getSsn() {
+        return ssn;
+    }
+
+    public void setSsn(String ssn) {
+        this.ssn = ssn;
     }
     
     public String getEmail() {
@@ -132,6 +141,11 @@ public class Person
     public Person getPerson()
     {
         return this;
+    }
+    
+    public String getFullName()
+    {
+        return firstName + " " + middle + " " + lastName;
     }
     
     public boolean isEmailValid()

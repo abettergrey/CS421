@@ -1,85 +1,162 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     
     <h:head>
         <title>DPP</title>
+        <link href='../resources/css/dpp.css' rel='stylesheet' type='text/css' />
     </h:head>
     <h:body>
-        DPP Staff
-        <p><h:link outcome="/index" value="home"/>
-           <h:link outcome="index" value="Staff Home"/>
-           <h:link outcome="addPatient" value="Add Patient"/>
-        </p>
-        <h:form>
-            <h:commandLink action="#{logBean.doLogout()}" value="logout" />         
-        </h:form>
-        <h:form>
-            <h3>Create Patient</h3>
-               
-                <h:outputLabel value="First Name " />
+        <div id="wrapper">
+            <div id="header">
+                <a href="index.xhtml">
+                <img src="../resources/images/dppLogo.jpg" width="200" height="50" style="margin: 20px;" /></a>
+                <h2>Doctor Patient Portal</h2>
+                <div>    
+                    <h:form>
+                        <h:outputLabel  value="username: " style="font-weight:bold"/>
+                        <h:outputText value="name" /> 
+                    </h:form>
+                </div><!-- #header -->
+            </div>
+            
+            <div id="content" style="padding-top: 80px;">
+                <div id="bg_body_staff">
+                    <p>Information</p>
+                </div>
+            </div>
+            
+            <div id="content">
+                <div id="bg_body" style="margin-top:-2px; height:1040px">  
+                    <div id="navbar">
+                        <ul class="lnavbar">
+                            <li><a href="index.xhtml" >View Schedule</a></li>
+                            <li class="navbarMain"><a href="index.xhtml">Patient Account</a>
+                                <ul><li id="navbar_app"><a href="addPatient.xhtml">Create Account</a></li>
+                                    <li id="navbar_app"><a href="index.xhtml">View Account</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="navbarMain"><a href="index.xhtml">Appointment</a>
+                                <ul><li id="navbar_app"><a href="index.xhtml">Create</a></li>
+                                    <li id="navbar_app"><a href="index.xhtml">View</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="index.xhtml">Help</a></li>
+                        </ul>
+                        <ul style="float:right">
+                            <li><h:form>
+                                    <h:commandLink action="#{logBean.doLogout()}" value="logout" /> 
+                                </h:form>
+                            </li>
+                        </ul>
+                    <br />
+ 
+                    </div>
+                    
+                    <div id ="body_content">
+                        <p><h2>DPP Search for Patient</h2></p>
+                        
+                        <h:form>
+                            <h:outputLabel value="Patient SSN: " />
+                            <h:inputText id="search" value="#{maintains.searchField}" maxlength="8" required="true" requiredMessage=" *"/>
+                            <br /><br />
+                            
+                            <h:commandButton id="g" onclick="t()" value="submit search" action="#{maintains.search}" >
+                            <f:ajax execute="search" render="g" />
+                            </h:commandButton>
+                            <h:message errorStyle="color:red" for="search" /><br></br>   
+                        </h:form>
+                        
+                        
+                        <h:form >
+                            <div id="test">
+                               
+                                
+                            
+                            <br/><br/>
+            <h3>DPP Create Patient</h3>
+            <h:outputLabel value="First Name " />
                 <h:inputText id="firstName" value="#{maintains.patient.firstName}" required="true" requiredMessage=" *"/>
                 <h:message errorStyle="color:red" for="firstName" /><br></br>
-                
+                <br/>
                 <h:outputLabel value="Middle" />
                 <h:inputText id="middle" value="#{maintains.patient.middle}"  maxlength="1" required="true" requiredMessage=" *"/>
                 <h:message errorStyle="color:red" for="middle" /><br></br>
-                
+                <br/>
                 <h:outputLabel value="Last Name" />
                 <h:inputText id="lastName" value="#{maintains.patient.lastName}" required="true" requiredMessage=" *"/>
                 <h:message errorStyle="color:red" for="lastName" /><br></br>
-                
+                <br/>
+                <h:outputLabel value="SSN" />
+                <h:inputText id="ssn" value="#{maintains.patient.ssn}" maxlength="8" required="true" requiredMessage=" *"/>
+                <h:message errorStyle="color:red" for="ssn" /><br></br>
+              <br/>
                 <hr></hr>   
-
+                <br/>
                 <h:outputLabel value="Email Address " />
                 <h:inputText id="email" value="#{maintains.patient.email}" required="true" requiredMessage=" *"/>   
                 <h:message errorStyle="color:red" for="email" /><br></br>
-                
+                <br/>
                 <h:outputLabel value="Confirm Email Address" />
                 <h:inputText id="tmpEmail" value="#{maintains.tmpEmail}" required="true" requiredMessage=" *"/>
                 <h:message errorStyle="color:red" for="tmpEmail" /><br></br>
-
+                <br/>
                 <hr></hr>  
-
+                <br/>
                 <h:outputLabel value="Permanent Address" /> 
                 <h:inputText id="address" value="#{maintains.patient.address}" required="true" requiredMessage=" *"/>    
                 <h:message errorStyle="color:red" for="address" /><br></br>
-                
+                <br/>
                 <h:outputLabel value="Apartment" /> 
                 <h:inputText id="apt" value="#{maintains.patient.apt}" />    
                 <h:message errorStyle="color:red" for="apt" /><br></br>
-                
+                <br/>
                 <h:outputLabel value="City" />   
                 <h:inputText id="city" value="#{maintains.patient.city}" required="true" requiredMessage=" *"/>     
                 <h:message errorStyle="color:red" for="city" /><br></br>
-                
+                <br/>
                 <h:outputLabel value="State" />    
                 <h:inputText id="state" value="#{maintains.patient.state}" maxlength="2" required="true" requiredMessage=" *"/>   
                 <h:message errorStyle="color:red" for="state" /><br></br>
-                
+                <br/>
                 <h:outputLabel value="Zip" />    
                 <h:inputText id="zip" value="#{maintains.patient.zip}" required="true" requiredMessage=" *"/>     
                 <h:message errorStyle="color:red" for="zip" /><br></br>
-
+                <br/>
+                <hr></hr>
+                <br/>
                 <h:outputLabel value="Date of Birth (mm-dd-yyyy)" /><br></br>
                 <h:inputText id="birthDate" value="#{maintains.patient.birthDate}"  maxlength="10" required="true" requiredMessage=" *"/>  
                 <h:message errorStyle="color:red" for="birthDate" /><br></br> 
-
+                <br/>
                 <h:outputLabel value="Home Phone Number (xxx)-xxx-xxxx" /><br></br>
                 <h:inputText id="phone" value="#{maintains.patient.phone}"  maxlength="10" required="true" requiredMessage=" *"/>
                 <h:message errorStyle="color:red" for="phone" /><br></br>
-                
+                <br/>
                 <h:outputLabel value="Mobile Phone Number (xxx)-xxx-xxxx" /><br></br>
                 <h:inputText id="mobile" value="#{maintains.patient.mobile}"  maxlength="10"/><br></br>  
-            
+                <br/>
                 <h:commandButton value="submit" action="#{maintains.create()}" ></h:commandButton>
                 <h:commandButton value="Clear All"></h:commandButton>
                 
-                <h:commandLink action="#{navigationBean.redirectToAccountCreated()}" value="Info page"/>
+                <h:commandLink action="#{navigationBean.redirectToAccountCreated()}"/>
+                </div>
         </h:form>
-        
-        
+                        
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>
+            function t()
+            {
+                $("#test").show();
+            }
+        </script>
         
     </h:body>
 </html>

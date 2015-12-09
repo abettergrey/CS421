@@ -1,25 +1,59 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    
     <h:head>
         <title>DPP</title>
+        <link href='resources/css/dpp.css' rel='stylesheet' type='text/css' /> 
     </h:head>
     <h:body>
-        Main dpp
-        <p><h:link outcome="index" value="Home"/>
-           <h:link outcome="/staff/index" value="Staff"/>
-           <h:link outcome="/user/index" value="User"/>
-           <h:link outcome="login" value="Login"/>
-        </p>
-
+        <div id="wrapper">
+            <div id="header">
+                <a href="index.xhtml">
+                <img src="resources/images/dppLogo.jpg" width="200" height="50" style="margin: 20px;" /></a>
+                <h2>Doctor Patient Portal</h2>
+                <div>    
+                    <h:form>
+                        <h:inputText p:placeholder="name" styleClass="text-input" id="username" value="#{logBean.user.username}"/>
+                        <h:inputSecret p:placeholder="password" id="password" value="#{logBean.user.password}"/>
+                        <h:commandButton styleClass="submitButton" value ="Login" action="#{logBean.logIn()}"/>
+                        <h:commandLink action="#{navigationBean.redirectToInfo()}"/>
+                    </h:form>
+                </div><!-- #header -->
+            </div>
+            
+            <div id="content" style="padding-top: 80px;">
+                <div id="bg_body">
+                    <div id="navbar">
+                        <ul class="lnavbar">
+                        <li><a href="index.xhtml" >Home</a></li>
+                        <li><a href="index.xhtml">Services</a></li>
+                        <li><a href="index.xhtml">For Patients</a></li>
+                        <li><a href="index.xhtml">About us</a></li></ul>
+                        <ul class="rnavbar">
+                        <li><a href="index.xhtml">Sign Up</a></li></ul></div>
+                    
+                    <div id="mes">
+                        <h4 id="welcome">Welcome</h4>
+                    </div> 
+                </div>
+            </div> 
+              
+        </div> 
         <h:form>
-                <h3>Info</h3>
-                <br/>
-                <h:outputText value="This is a info page. Everyone has Access to it!"/>
-                <br/>
-            </h:form>
-
+            <h:commandLink id="navbar" action="#{logBean.doLogout()}" value="logout" /> 
+        </h:form>
+        
+        
+        
+        
+     
+   
+        
+        
+        
     </h:body>
 </html>
 

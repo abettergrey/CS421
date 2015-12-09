@@ -5,26 +5,70 @@
     
     <h:head>
         <title>DPP</title>
+        <link href='../resources/css/dpp.css' rel='stylesheet' type='text/css' />
     </h:head>
     <h:body>
-        Account Created
-        <p><h:link outcome="/index" value="home"/>
-           <h:link outcome="index" value="Staff Home"/>
-           <h:link outcome="addPatient" value="Add Patient"/>
-        </p>
-        <h:form>
-            <h:commandLink action="#{logBean.doLogout()}" value="logout" />         
-        </h:form>
-        <h:form>
-            <h:messages errorStyle="color:red"/>
-            <br/>
-            Account Created for
-            <h:outputLabel value="username: " style="font-weight:bold"/>
-            <h:outputText value="#{maintains.user.username}" />
-            <br/>
-            <h:outputLabel value="tmp password: " style="font-weight:bold"/>
-            <h:outputText  id="password" value="#{maintains.user.tmppassword}"/>
-            </h:form>
+        <div id="wrapper">
+            <div id="header">
+                <a href="index.xhtml">
+                <img src="../resources/images/dppLogo.jpg" width="200" height="50" style="margin: 20px;" /></a>
+                <h2>Doctor Patient Portal</h2>
+                <div>    
+                    <h:form>
+                        <h:outputLabel  value="username: " style="font-weight:bold"/>
+                        <h:outputText value="name" /> 
+                    </h:form>
+                </div><!-- #header -->
+            </div>
+            
+            <div id="content" style="padding-top: 80px;">
+                <div id="bg_body_staff">
+                    <p>Information</p>
+                </div>
+            </div>
+            
+            <div id="content">
+                <div id="bg_body" style="margin-top:-2px; height:200px">  
+                    <div id="navbar">
+                        <ul class="lnavbar">
+                            <li><a href="staff/index.xhtml" >View Schedule</a></li>
+                            <li class="navbarMain"><a href="staff/index.xhtml">Patient Account</a>
+                                <ul><li id="navbar_app"><a href="addPatient.xhtml">Create Account</a></li>
+                                    <li id="navbar_app"><a href="staff/index.xhtml">View Account</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="navbarMain"><a href="staff/index.xhtml">Appointment</a>
+                                <ul><li id="navbar_app"><a href="staff/index.xhtml">Create</a></li>
+                                    <li id="navbar_app"><a href="staff/index.xhtml">View</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="index.xhtml">Help</a></li>
+                        </ul>
+                        <ul style="float:right">
+                            <li><h:form>
+                                    <h:commandLink action="#{logBean.doLogout()}" value="logout" /> 
+                                </h:form>
+                            </li>
+                        </ul>
+                    </div>
+                    <br />
+                    
+                    <div style="margin:20px">
+                        <h:form>
+                            <h:messages errorStyle="color:red"/>
+                            <br/>
+                            <h3>Account Created</h3><br/>
+                            <h:outputLabel value="username: " style="font-weight:bold"/>
+                            <h:outputText value="#{maintains.user.username}" />
+                            <br/>
+                            <h:outputLabel value="tmp password: " style="font-weight:bold"/>
+                            <h:outputText  id="password" value="#{maintains.user.tmppassword}"/>
+                        </h:form>
+                    </div>
+                </div>    
+            </div>  
+        </div>       
     </h:body>
 </html>
     

@@ -42,7 +42,7 @@ public class LoginController
             session.setAttribute("user", user);
             
             loggedIn = true;
-            
+            System.out.println(user.getUsername() + "****************************");
             // if user role is STAFF redirect to staff hme page
             // else: redirect to user home page
             if (user.getRole().equals("STAFF"))           
@@ -51,8 +51,10 @@ public class LoginController
                 return navigationBean.redirectToWelcomeUser();
         }
         
+        String mes = "Login failed: The login you entered is not valid. Please try again, or contact your healthcare provider.";
+        
         // create error message if passworeds are nto equal
-        FacesMessage msg = new FacesMessage("Login error!", "ERROR MSG");
+        FacesMessage msg = new FacesMessage(mes, "ERROR MSG");
         msg.setSeverity(FacesMessage.SEVERITY_ERROR);
         FacesContext.getCurrentInstance().addMessage(null, msg);
         

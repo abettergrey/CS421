@@ -6,8 +6,9 @@
     </filter>
     <filter-mapping>
         <filter-name>LoginFilter</filter-name>
-        <url-pattern>/faces/staff/*</url-pattern>
-        <url-pattern>/faces/user/*</url-pattern>
+
+        <url-pattern>/staff/*</url-pattern>
+        <url-pattern>/user/*</url-pattern>
     </filter-mapping>
    
     <context-param>
@@ -22,7 +23,7 @@
 
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
-        <url-pattern>/faces/*</url-pattern>
+        <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
       
     <session-config>
@@ -31,7 +32,7 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>faces/index.xhtml</welcome-file>
+        <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
 
     

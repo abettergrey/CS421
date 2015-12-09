@@ -8,3 +8,497 @@ and open the template in the editor.
     Author     : dggodi
 */
 
+@charset "utf-8";
+/* CSS Document */
+
+/* main.css */
+
+/* reset browser styles */
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, 
+
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+
+time, mark, audio, video {
+
+	margin: 0;
+
+	padding: 0;
+
+	border: 0;
+
+	font-size: 100%;
+
+	vertical-align: baseline;
+
+}
+
+
+
+body {line-height: 1.2; background-image: url("../images/bg.jpg"); background-repeat:repeat-x}
+
+ol { padding-left: 1.4em;list-style: none;}
+
+ul {padding-left: 1.4em;list-style: none;}
+
+table {border-collapse: collapse;border-spacing: 0;}
+
+html, body 
+{
+  margin:0; padding:0; height:100%;
+  line-height: 1.2; font-family:Verdana, Arial, Helvetica, sans-serif;font-size:1em;
+}
+  
+a{text-decoration: none;}
+
+p{line-height: 1.4;}
+
+#wrapper {min-height:100%;position:relative;}
+
+/** header **********************************************************************/
+
+#header {
+	background:#ededed;
+
+}
+
+#header {position:fixed;top: 0%; width: 100%; z-index:10; background-color: white; 
+box-shadow: 3px 3px 5px #000;}
+#header img {float:left; padding-right:50px}
+#header h2 {float:left; font-size:1.4em; color:blue; padding:20px;margin-top:8px;}
+#header div {float:right; margin-right:30px; margin-top:25px; margin-bottom:25px}
+
+input[type=text] {width:90px; padding:5px; border:2px solid #ccc; 
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}
+
+input[type=password] {width:80px; padding:5px; border:2px solid #ccc; 
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}
+
+.submitButton {padding:5px; border:2px solid #3399CC; color:#FFFFFF;
+-webkit-border-radius: 5px;
+border-radius: 5px; background-color:blue;
+box-shadow:2px 2px 3px 1px #3399CC inset; 
+}
+
+.submitButton:hover
+{
+	box-shadow:2px 2px 3px 1px #030 inset;
+	background-color:#666;
+	box-shadow:2px 2px 3px 1px #333 inset;
+	border:2px solid #999;	
+	cursor:pointer;
+}
+
+
+/*******************************************************************************/
+
+#bg_body_staff {margin: 0 auto; width:100%; border:1px solid #FFF;
+border-right: 2px solid black; background-color:#3399CC;
+}
+
+#body_content{margin:20px}
+
+#bg_body_member {margin: 0 auto; width:100%; border:1px solid #FFF; margin-top:10px;
+border-right: 2px solid black; background-color:#3399CC;
+}
+
+#bg_body_member p, #bg_body_staff p {margin:15px; color:white}
+
+#bg_body_memberInfo{margin: 0 auto; width:100%; border:1px solid #FFF;
+border-bottom: 2px solid black; background-color:white; color:black;
+}
+
+#bg_body_memberInfo p {margin:15px;}
+/*******************************************************************************/
+
+#content {width:100%; font-size:.8em}
+#bg_body {margin: 0 auto; max-width: 80%; border:1px solid #FFF; margin-top:20px;
+border-right: 2px solid black; box-shadow: 3px 3px 5px #333; background-color:#FFF}
+
+/** navbar *************************************************************************/
+
+
+#navbar {
+height:40px; background-color:#333; border-top: 1px solid #999; border-bottom: 1px solid #999;}
+#navbar ul {margin-top:6px; padding: 0; list-style-type: none;}
+.lnavbar{float:left}
+.rnavbar{float:right}
+#navbar ul li {display: inline;}
+.lnavbar li {border-right: 1px solid rgb(153,153,153);}
+.rnavbar li {border-left: 1px solid rgb(153,153,153);}
+
+#navbar a {
+	display: inline-block;
+	padding: 7px 17px 7px 17px;
+	font-weight: 600;
+	text-transform:uppercase;
+	font-size: 0.8em;
+	
+	margin-right: 5px; 
+        text-decoration: none;  
+}
+
+/////////////////////////////////////
+
+#navbar ul {
+   padding:0;
+   margin:0;
+   list-style-type:none;
+}
+
+#navbar li {
+	float:left;
+	position:relative;
+}
+
+#navbarMain {
+	margin-right: 10px;
+}
+
+#navbar a, .navbar:visited{
+	display:block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	font-weight: bold;
+	color: #CCC;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	text-decoration: none;
+	padding-top: 8px;
+	padding-bottom: 12px;
+
+}
+
+#navbar ul ul {
+	visibility:hidden;
+	position:absolute;
+	z-index:100;
+	height:0px;
+	top:35px;
+	left:0px;
+	z-index: 50;
+	margin-top: 1px;
+}
+
+#navbar ul ul a, .navbar ul ul a:visited {
+	background:#999999;
+        width:130px;
+	color:#000000;
+	font-weight: bold;
+	text-align: left;
+	height:auto;
+	line-height:1em;
+	border-right-width: 2px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #4E6774;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+	padding: 8px;
+	border-top-width: 2px;
+	border-top-style: solid;
+	border-top-color: #4E6774;
+}
+
+#navbar a:hover{
+   color: #FFFFFF;
+}
+
+#navbarMain_services a:hover {
+	color: #FFFFFF;
+	background-color: #1a303f;
+}
+
+#navbar ul li:hover ul, .navbar ul a:hover ul{visibility:visible}
+
+/////////////////////////////////
+
+#navbar a:link{color:#CCC}
+#navbar a:visited{color:#CCC}
+#navbar a:hover{color:#FC0;}
+#navbar a:active{color:#FC0}
+
+/**slider ******************************************************************************************/
+
+#leftCol {float:left; margin-left:20px; width: 500px;}
+#rightCol {float:left; margin-left:20px; margin-top:20px}
+
+.slider 
+{
+  float:left;
+  width:536px; height:380px; overflow:hidden; 
+  border:2px solid #ccc; 
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom:20px;
+  margin-top:20px;
+}
+
+.slider img{width:536px; height:380px; display:none; }
+
+#mes {font-size:.9em;float:none; margin:20px; width:536px; text-align: justify;
+}
+
+#mes p {margin-bottom:20px}
+
+#mes h4 {font-size:1.5em; margin-bottom:20px}
+
+/********************************************************************************/
+
+#tableContainer
+{
+  margin-left:60px; margin-right: 20px ; margin-bottom: 30px; padding: 0px 20px 20px 20px ; 
+  width:300px;border:2px solid #ccc; -webkit-border-radius: 5px; border-radius: 5px;
+}
+#tableContainer h4 {margin-bottom:10px; font-size:1.1em; color:#CCC; border-style: solid; padding-top: 10px; padding-bottom:10px;}
+#tableContainer table{border-collapse: separate; border-spacing: 10px; padding-bottom:10px;
+                      margin-bottom:20px; border-bottom: 2px solid #ccc;border-top: 2px solid #ccc;}
+#tableContainer td{font-weight:bold; width:75px; font-size:.8em}
+#tableContainer td span{color:#930}
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+
+.bottom {float:left;  padding-bottom:0px; border:2px solid #666; -webkit-border-radius: 5px;}
+
+
+.bottom {float:left; margin-top: 20px; margin-left:20px; width: 292px; height:252px; 
+         border:2px solid #666; -webkit-border-radius: 5px; border-radius: 5px;}
+.bottom img {width: 292px; height:212px;}
+.bottom h4 {padding: 10px 20px 10px 20px; background-color:#666666; color:#CCCCCC; font-size: 1.1em; }
+ 
+/*copyright ****************************************************************/
+#footer {
+	width: 100%;
+	color: #000;font-size: 0.8em;  
+}
+
+#footer div {
+   float: right;
+   margin-top:40px; margin-right:60px; margin-bottom:40px;
+}
+
+#footer a {
+	text-decoration:none;
+	color: #000;
+}
+#footer a:hover {
+	color:#030
+}
+    
+
+
+/**********************************************************************
+ *
+ * signup.php 
+ *
+ **********************************************************************/
+#main {width: 550px; margin-bottom:20px; margin-left:20px}
+#banner {width:100%; margin-top:10px; height:60px; background-color:#999 ;border-bottom: solid 2px #FFFFFF;
+         border: 2px solid #ccc; -webkit-border-radius: 5px; border-radius: 5px;}
+.requiredFields {color:white; padding-left: 40px; padding-top:20px; padding-bottom:20px;}
+.requiredFields span {display:none; font-size:.8em}
+#signUpTable{background-color:#FFF; padding: 20px 20px 20px 20px; border-bottom: solid 2px #FFFFFF;}
+#signUpTable table{ border-collapse: separate; border-spacing: 10px;}
+#signUpTable td{font-size:.8em;font-weight:bold;}
+#signUpTable td span{color:#930}
+#signUpTable input[type=text],input[type=password] {width:200px}
+
+.allChecks {background-repeat:no-repeat; height:20px; width:20px; display:block; margin-left:220px; margin-top:-24px}
+
+/**********************************************************************
+ *
+ * members only 
+ *
+ **********************************************************************/
+
+#selectionBox {height:75px; background-color:#333; margin-top: 0px; bottom-margin:20px}
+#selectionBox h2 {font-size:2.0em; color:white; padding-left: 40px; padding-bottom:20px;}
+
+.selectionBox {position:relative; top:25px; width:25px; height:25px; width:25px; background-color:#666; color:#FFF; font-size:.8em}
+
+.selectionBox a{color:#FFFFFF; display: block; width: 150px; height:auto; }
+.selectionBox ul 
+{  width:150px; position:relative; z-index:10; top:-5px; left:0px; list-style: none; 
+   padding: 10px; border: 2px solid #333; background-color:#FFFFFF;
+}
+
+#selectionBoxLeft {float:left; left:25px;} 
+#selectionBoxLeft ul 
+{
+    display: none;
+	overflow:hidden;	
+	float:left;
+}
+
+#selectionBoxRight {float:right; right:25px;}
+#selectionBoxRight ul {
+    display: none;
+	overflow:hidden;
+	float:right;
+}
+
+.selectionBox ul li{width:130px; margin-top:2px; padding: 5px 10px 4px 10px; color: #FFF; background: #333;}
+
+.selectionBox:hover {cursor:pointer}
+#selectionBoxLeft:hover ul {display:block;}
+#selectionBoxRight:hover ul {display:block;}
+.selectionBox ul li:hover{background: #066;}
+
+#userHeader {float:left; margin-left:45px; margin-top:27px; color:#FFF; font-size:.9em}
+#locHeader {float:right; margin-right:45px; margin-top:27px; color:#FFF; font-size:.9em}
+ 
+#searchContainer ul
+{
+	float:right; position:relative; z-index:5; margin-top:21px; margin-right:65px; list-style: none; padding:5px; border:2px solid #090; 
+	-webkit-border-radius: 5px;
+border-radius: 5px; background-color:#393;
+box-shadow:2px 2px 3px 1px #060 inset;
+}
+
+#searchContainer input[type=text] {float:right; position:relative; z-index:1;margin-top:22px; width:150px}
+
+#searchContainer a{color:#FFFFFF;}
+
+#searchContainer ul:hover 
+{
+	box-shadow:2px 2px 3px 1px #030 inset;
+	background-color:#666;
+	box-shadow:2px 2px 3px 1px #333 inset;
+	border:2px solid #999;	
+	cursor:pointer;
+}
+
+#searchContainer  a:hover{background-color:#666}
+
+/***
+ * waveRunners.php
+ */
+
+#main_product {margin:20px 20px 20px 20px;font-size:.9em;}
+#main_product h2, p{margin-bottom:20px}
+
+ .product{margin:60px 40px 40px 0px; height:200px}
+.product img{float:left;width:200px;height:114px; margin-right:40px; border: 1px solid #000000;box-shadow: 4px 6px 8px rgba(0,0,0,.75);}
+
+.info{float:left; width:600px}
+.info div {border-bottom: 2px solid #000}
+
+.info h4 {display:inline;color:#C60}
+.info h5 {display:inline; font-size:.9em}
+.info span{color:#666666}
+info p span{padding-right:20px;}
+.info ul{float:left; margin: 10px 40px 0px 0px; list-style:square}
+.info li{font-size:.9em;color:#333; padding-bottom:5px}
+
+.price{float:right;}
+
+/**********************************************************************
+ *
+ * members only..... database tables
+ *
+ **********************************************************************/
+ 
+ #databaseTable td 
+ {
+	font-size:.8em; 
+    border: 1px solid black;
+    border-collapse: collapse;
+	padding-top: 5px; padding-bottom: 5px;padding-left: 15px; padding-right:10px;
+}
+
+#databaseTable th{
+    padding-top: 5px; padding-bottom: 5px; padding-left: 20px;font-size:1em ;
+}
+
+.viewRow {display:none;}
+.viewRow div {padding-left:20px; height:20px}
+
+#databaseTable tr:nth-child(even) {
+    background-color: #eee;
+}
+#databaseTable tr:nth-child(odd) {
+   background-color:#fff;
+}
+#databaseTable th	{
+    background-color:#5F5F5F;
+    color: white;
+	border-bottom: 2px solid rgb(255,255,255);
+	font-size:.8em
+}
+
+#databaseTable th div{width:100%; border-right: 1px solid rgb(153,153,153);margin-right:20px; text-align: left;}
+
+/***************************************************************************************/
+
+#database_navbar {height:20px}
+#database_navbar ul {padding: 0; list-style-type: none;}
+#database_navbar li {display: inline;background-color:#FFFFFF;}
+
+#database_navbar a {
+	padding-left: 10px; padding-right: 10px;
+	font-weight:bold;
+	text-transform:uppercase;
+	font-size: 0.7em;
+	border-right: 1px solid rgb(153,153,153);
+	
+}
+
+#database_navbar a:link{color:#000}
+#database_navbar a:visited{color:#000}
+#database_navbar a:hover{color:#666666}
+#database_navbar a:active{color:#666666}
+
+/**********************************************************************************************************/
+#addButton {width:96%; margin:0 auto;}
+#addButton div{margin:20px; width:100px; height:25px;background-color:#333; border:2px solid #999; padding-top:5px; text-align:center;}
+
+#addButton a{
+	
+	font-weight:bold;
+	text-transform:uppercase;
+	font-size: 0.8em;
+	}
+	
+#addButton a:link{color:#CCC}
+#addButton a:visited{color:#FFF}
+#addButton a:hover{color:#FC0}
+#addButton a:active{color:#FC0}
+
+#mes {margin-top:20px}
+div h3 {color:#000000};
+
+
+
+#checkboxR {margin:50px; width:100px; height:20px}
+.signinBG {background-image:url("../images/couple.jpg");background-repeat: no-repeat;
+   background-attachment: fixed; background-position: 40%, 0%; }
+
+
+#alertmsg {width:60%; height:50px; padding:10px; border:2px solid #ccc; 
+-webkit-border-radius: 5px; background-color: #ebcccc;
+border-radius: 5px;}
+
+#navbar_app a:hover {
+	color: #FFFFFF;
+	background-color: #1a303f;
+}
+
+
+#test {display: none}
+#test input {width:150px}
+
+

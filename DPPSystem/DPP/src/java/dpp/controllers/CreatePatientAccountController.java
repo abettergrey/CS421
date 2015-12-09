@@ -22,6 +22,7 @@ public class CreatePatientAccountController
     private Patient patient = new Patient();
     private User user = new User();
     private String tmpEmail;
+    private String searchField;
        
     public Patient getPatient() {
         return patient;
@@ -45,6 +46,35 @@ public class CreatePatientAccountController
 
     public void setTmpEmail(String tmpEmail) {
         this.tmpEmail = tmpEmail;
+    }
+    
+    public String getSearchField() {
+        return searchField;
+    }
+
+    public void setSearchField(String searchField) {
+        this.searchField = searchField;
+    }
+    
+    public String search()
+    {
+        NavigationBean nav = new NavigationBean();
+        
+        String mes = "Patient is already registered!";
+        
+        PatientMaintananceAppDB tmp = new PatientMaintananceAppDB(); 
+        
+        if (!tmp.searchForPatient(searchField))
+        {
+            patient.setSsn(searchField);
+            return nav.redirectToAddPatient();
+        }
+        
+        FacesMessage msg = new FacesMessage(mes, "ERROR MSG");
+        msg.setSeverity(FacesMessage.SEVERITY_ERROR);
+        FacesContext.getCurrentInstance().addMessage(null, msg);
+        
+        return nav.redirectToAddPatient(); 
     }
   
     /**

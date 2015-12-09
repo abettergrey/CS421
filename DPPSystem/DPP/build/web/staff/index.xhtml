@@ -1,20 +1,68 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     
     <h:head>
-        <title>DPP</title>
+        <title>DPP Staff</title>
+        <link href='../resources/css/dpp.css' rel='stylesheet' type='text/css' />
     </h:head>
     <h:body>
-        DPP Staff
-        <p><h:link outcome="/index" value="home"/>
-           <h:link outcome="index" value="Staff Home"/>
-           <h:link outcome="addPatient" value="Add Patient"/>
-        </p>
-        <p>Welcome <h:outputText value="#{logBean.user.username}"/></p>
-        <h:form>
-            <h:commandLink action="#{logBean.doLogout()}" value="logout" />
-        </h:form>
+        <div id="wrapper">
+            <div id="header">
+                <a href="index.xhtml">
+                <img src="../resources/images/dppLogo.jpg" width="200" height="50" style="margin: 20px;" /></a>
+                <h2>Doctor Patient Portal</h2>
+                <div>    
+                    <h:form>
+                        <h:outputLabel  value="username: " style="font-weight:bold"/>
+                        <h:outputText value="name" /> 
+                    </h:form>
+                </div><!-- #header -->
+            </div>
+            
+            <div id="content" style="padding-top: 80px;">
+                <div id="bg_body_staff">
+                    <p>Information</p>
+                </div>
+            </div>
+            
+            <div id="content">
+                <div id="bg_body" style="margin-top:-2px; height:200px">  
+                    <div id="navbar">
+                        <ul class="lnavbar">
+                            <li><a href="staff/index.xhtml" >View Schedule</a></li>
+                            <li class="navbarMain"><a href="staff/index.xhtml">Patient Account</a>
+                                <ul><li id="navbar_app"><a href="addPatient.xhtml">Create Account</a></li>
+                                    <li id="navbar_app"><a href="staff/index.xhtml">View Account</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="navbarMain"><a href="staff/index.xhtml">Appointment</a>
+                                <ul><li id="navbar_app"><a href="staff/index.xhtml">Create</a></li>
+                                    <li id="navbar_app"><a href="staff/index.xhtml">View</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="index.xhtml">Help</a></li>
+                        </ul>
+                        <ul style="float:right">
+                            <li><h:form>
+                                    <h:commandLink action="#{logBean.doLogout()}" value="logout" /> 
+                                </h:form>
+                            </li>
+                        </ul>
+                    <br />
+ 
+                    </div>    
+                </div>  
+            </div>
+        
+        
+            
+            
+        </div>
+        
+   
     </h:body>
 </html>

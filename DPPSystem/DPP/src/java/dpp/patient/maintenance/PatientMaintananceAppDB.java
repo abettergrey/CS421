@@ -12,11 +12,49 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import dpp.dbClasses.User;
+import java.util.ArrayList;
+import java.util.List;
+import org.hibernate.Query;
 /**
  * database manager class for patient info
  */
 public class PatientMaintananceAppDB 
 {
+    public boolean searchForPatient(String searchField)
+    {
+        boolean valid = false;
+        
+        List<Person> person = new ArrayList();
+        
+        // create session
+        Session session = HibernateUtil.getSessionFactory().openSession();
+      
+        try 
+        {
+            Transaction trans = session.beginTransaction();
+            
+            // search database for username
+            String hql = "FROM  P person WHERE P.ssn = :searchField";
+            Query query = session.createQuery(hql);
+            query.setParameter("ssn", searchField);
+            person = query.list();
+            if(!person.isEmpty()) valid = true;
+            trans.commit();
+             
+        }
+        catch(HibernateException e)
+        {
+            e.printStackTrace();//Later remove this by appropriate logger statement or throw custom exception
+        }
+        finally
+        {
+            session.close(); 
+        }
+        
+        return valid;
+                
+    }
+    
     /**
      * saves new patient info to DB
      * @param patient
