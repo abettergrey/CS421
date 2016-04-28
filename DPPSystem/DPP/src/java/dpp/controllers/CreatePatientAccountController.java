@@ -96,6 +96,8 @@ public class CreatePatientAccountController
             user.setRole(new RoleNode().USER);
             
             PatientMaintananceAppDB tmp = new PatientMaintananceAppDB();
+            int count = tmp.countRows(user);
+            patient.setId(count+1);
             tmp.createNewPatient(this.patient, user);
         
             return nav.redirectToAccountCreated();

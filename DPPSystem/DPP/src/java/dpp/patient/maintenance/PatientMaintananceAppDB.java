@@ -15,6 +15,7 @@ import dpp.dbClasses.User;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Query;
+import static java.lang.Math.toIntExact;
 /**
  * database manager class for patient info
  */
@@ -53,6 +54,33 @@ public class PatientMaintananceAppDB
         
         return valid;
                 
+    }
+    
+    public int countRows(User user)
+    {
+        int count = 0;
+        
+        Session session = HibernateUtil.getSessionFactory().openSession();
+             
+        try 
+        {
+            
+            long n = (Long)(session.createQuery("select count(*) from User").uniqueResult());
+            Transaction trans = session.beginTransaction();
+            trans.commit();
+            count = toIntExact(n);
+        }
+        catch(HibernateException e)
+        {
+            e.printStackTrace();//Later remove this by appropriate logger statement or throw custom exception
+        }
+        finally
+        {
+            session.close(); 
+        }
+        
+        
+        return count;
     }
     
     /**

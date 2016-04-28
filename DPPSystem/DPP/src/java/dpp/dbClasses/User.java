@@ -79,7 +79,7 @@ public class User
         String firstInitial = "" + firstName.toLowerCase().charAt(0);
         String middleInitial = middle.toLowerCase();
         
-        return firstInitial + middleInitial + lastName;
+        return firstInitial + middleInitial + lastName.toLowerCase();
     }
 
     /**

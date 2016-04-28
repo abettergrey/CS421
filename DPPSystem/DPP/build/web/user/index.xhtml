@@ -7,18 +7,18 @@
     
     <h:head>
         <title>DPP User</title>
-        <link href='../resources/css/dpp.css' rel='stylesheet' type='text/css' />
+        <link href='resources/css/dpp.css' rel='stylesheet' type='text/css' />
     </h:head>
     <h:body>
         <div id="wrapper">
             <div id="header">
                 <a href="index.xhtml">
-                <img src="../resources/images/dppLogo.jpg" width="200" height="50" style="margin: 20px;" /></a>
+                <img src="resources/images/dppLogo.jpg" width="200" height="50" style="margin: 20px;" /></a>
                 <h2>Doctor Patient Portal</h2>
                 <div>    
                     <h:form>
                         <h:outputLabel  value="username: " style="font-weight:bold"/>
-                        <h:outputText value="awdoneyet" /> 
+                        <h:outputText value="#{logBean.user.username}" /> 
                     </h:form>
                 </div><!-- #header -->
             </div>
@@ -42,14 +42,14 @@
                 <div id="bg_body" style="height:200px">  
                     <div id="navbar">
                         <ul class="lnavbar">
-                            <li><a href="index.xhtml" >Edit Profile</a></li>
-                            <li><a href="index.xhtml">View Medical Record</a></li>
-                            <li class="navbarMain"><a href="index.xhtml">Appointment</a>
-                                <ul><li id="navbar_app"><a href="index.xhtml">Create</a></li>
-                                    <li id="navbar_app"><a href="index.xhtml">View</a></li>
+                            <li><a href="" >Edit Profile</a></li>
+                            <li><a href="">View Medical Record</a></li>
+                            <li class="navbarMain"><a href="">Appointment</a>
+                                <ul><li id="navbar_app"><a href="">Create</a></li>
+                                    <li id="navbar_app"><a href="">View</a></li>
                                 </ul>
                             </li>
-                            <li><a href="index.xhtml">Help</a></li></ul>
+                            <li><a href="">Help</a></li></ul>
                         <ul style="float:right">
                             <li><h:form>
                                     <h:commandLink action="#{logBean.doLogout()}" value="logout" /> 
